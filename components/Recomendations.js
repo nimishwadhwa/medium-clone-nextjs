@@ -10,10 +10,13 @@ import recoImage3 from "../static/recoImage3.png";
 import Image from "next/image";
 
 const Recomendations = ({ author }) => {
-  const followerCount = Intl.NumberFormat("en-US", {
-    notation: "compact",
-    maximumFractionDigits: 1,
-  }).format(author?.data?.followerCount);
+  const followerCount =
+    author?.length != 0
+      ? Intl.NumberFormat("en-US", {
+          notation: "compact",
+          maximumFractionDigits: 1,
+        }).format(author?.data?.followerCount)
+      : 0;
   return (
     <div className="wrapper h-screen min-w-[10rem] max-w-[30rem] flex-[1.2] p-[2rem]">
       <div className="bg-black text-white px-4 py-[.6rem] rounded-full flex items-center justify-center my-[2rem] cursor-pointer">

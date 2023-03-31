@@ -18,7 +18,7 @@ const Post = () => {
 
     setPost(posts.find((post) => post.id === router.query.slug));
     setAuthor(users.find((user) => user.id === post.data?.author));
-  }, [post]);
+  }, [posts, router.query.slug, author]);
 
   return (
     <div className="flex justify-between">
