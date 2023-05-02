@@ -30,7 +30,7 @@ const PostCard = ({ post }) => {
       setAuthorData((await getDoc(doc(db, "users", post.data.author))).data());
     };
     getAuthorData();
-  }, [authorData]);
+  }, []);
 
   return (
     <Link href={`/post/${post.id}`}>
